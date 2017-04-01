@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans');
+
+$texto: "Open Sans",Tahoma, Verdana;
+$titulo: "Fjalla One", Arial;
+$cor1: #000;
+$cor2: #F00;
+$cor3: #CCC;
+$cor4: #FFF;
+$transicao: all 0.5s;
+
+@mixin texto(){
+	font: 1.2em $texto;
+	color: $cor4;
+}
+
+/*---------TAGS-----------*/
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+body{
+	background-color: linear-gradient(to left, $cor4, $cor3) fixed;
+}
+header{
+	background: $cor1;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 1001;
+	& nav{
+		float: right;
+		margin-top: 13px;
+		/* Deixar ul li do menu inline*/
+		& ul li{
+			display: inline;
+			list-style: none;
+			& a{
+				@include texto();
+				text-decoration: none;
+				transition: $transicao;
+				text-transform: uppercase;
+				margin-left: 20px;
+				&:hover{
+					color: $cor2;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+footer{
+	width: 100%;
+	background: $cor1;
+	padding: 20px 0px;
+		a{
+			font-size: 2em;
+			color: $cor4;
+			text-decoration: none;
+			transition: $transicao;
+			margin-left: 15px;
+			&:hover{
+				color: $cor2;
+			}
+		}
+		p{
+			@include texto();
+		}
+}
+input{
+
+	width: 	50%;
+	padding: 1px 0px;
+	border: 1px solid black;
+}
+textarea{
+	width: 	50%;
+	border: 1px solid black;
+}
+
+/*---------CLASSES--------*/
+.left{
+	float: left;
+}
+.form1{
+	display: block;
+	margin-left: 20%;
+	font-family: $texto;
+
+}
+.right{
+	float: right;
+}
+
+.center{
+	text-align: center;
+}
+
+.clear{
+	clear: both;
+}
+.btn{
+		border: 1px solid $cor3;
+		padding: 5px;
+		transition: $transicao;
+		color: $cor1;	
+		margin-bottom: 10px;
+		border-radius: 2px;
+		background-color: $cor3;
+
+}
+.texto{
+	position: absolute;
+	top: 200px;
+	color: $cor4;
+	font-family: $titulo;
+	left: 30px;
+	text-shadow: 2px 2px 0px $cor1;
+	& p{
+		font-size: 1.4em;
+	}
+	& h1{
+		font-size: 3em;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+	& .btn{
+		border: 1px solid $cor4;
+		padding: 5px;
+		transition: $transicao;
+		text-shadow:  0 0 0 transparent;
+		color: $cor4;
+		text-decoration: none;
+		&:hover{
+			background: $cor4;
+			color: $cor1;
+			
+	}
+}
+}
+
+.container{
+	width: 1000px;
+	margin: auto;
+	& h1{
+		font: 3em $titulo;
+		margin: 50px 0px 20px 0;
+	}
+	& h2{
+		font: 2em $titulo;
+		color: $cor3;
+		margin-bottom: 20px;
+	}
+	& p{
+		font: 1.2em $texto;
+		text-align: justify;
+		margin: 10px 0px;
+	}
+}
+
+.img{
+	width: 90%;
+	background: $cor4;
+	padding: 10px;
+}
+.img-filmes{
+	width: 90%;
+	background: $cor4;
+	padding: 10px;
+	margin-top: 48px;
+}
+.col1{
+	width: 30%;
+}
+.col2{
+	width: 70%;
+}
+.top{
+	padding-top: 70px;
+}
+/*--------IDS------------*/
+#banner{
+	width: 100%;
+	padding-top: 70px;
+	& img{
+		width: 100%;
+	}
+}
+#menu{
+	border: 1px solid $cor4;
+	padding: 5px 8px;
+	color: $cor4;
+	font-size: 1.5em;
+	border-radius: 5px;
+	float: right;
+	margin-top: 10px;
+	display: none;
+}
+#filmes{
+	width: 100%;
+	background: url("../images/bg.jpg") fixed;
+	padding: 50px 0px;
+		h2{
+			text-transform: uppercase;
+			color: $cor4;
+			margin-bottom: 20px;
+		}
+		.filme{
+			width: 33%;
+			float: left;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+		img{
+			filter: sepia(80%);
+			transition: $transicao;
+			border: 1px solid $cor1;
+
+				&:hover{
+					filter: sepia(0);
+				}
+		}
+}
+/*-------MEDIAS QUERIES--------*/
+
+
+@media (max-width: 320px){
+	#menu{
+		display: block;
+	}
+	nav{
+		display: none;
+		background: $cor1;
+		width: 100%;
+		float: left;
+	    position: relative;
+	    z-index: 100;
+	    margin-top: 0 !important;
+
+		ul li{
+			display: block;
+			a{
+				float: left;
+				padding: 10px;
+				width: 100%;
+				border-bottom: 1px solid $cor4;
+			}
+		}
+	}
+	.texto{
+		top:90px;
+		p{
+			font-size: 0.8em;
+		}
+		h1{
+			font-size: 1.5em;
+		}
+	}
+	.container{
+		width: 320px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	#filmes{
+		.filme{
+			width: 100%;
+		}
+	}
+	.col1, .col2{
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.top{
+		padding-top: 90px;
+	}
+	.form1{
+	display: block;
+
+	font-family: $texto;
+
+}
+input{
+	width: 100%;
+}
+textarea{
+	width: 100%;
+}
+.form1{
+	margin-left: 0px;
+}
+}
+
+@media (min-width: 321px) and (max-width: 480px){
+	#menu{
+		display: block;
+	}
+	nav{
+		display: none;
+		background: $cor1;
+		width: 100%;
+		float: left;
+	    position: relative;
+	    z-index: 100;
+	    margin-top: 0 !important;
+
+		ul li{
+			display: block;
+			a{
+				float: left;
+				padding: 10px;
+				width: 100%;
+				border-bottom: 1px solid $cor4;
+			}
+		}
+	}
+	.texto{
+		top:90px;
+		p{
+			font-size: 0.8em;
+		}
+		h1{
+			font-size: 1.5em;
+		}
+	}
+	.container{
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	#filmes{
+		.filme{
+			width: 100%;
+		}
+	}
+	.col1, .col2{
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.top{
+		padding-top: 90px;
+	}
+	input{
+	width: 100%;
+}
+.form1{
+	margin-left: 0px;
+}
+textarea{
+	width: 100%;
+}
+}
+
+@media (min-width: 481px) and (max-width: 800px){
+#menu{
+		display: block;
+	}
+	nav{
+		display: none;
+		background: $cor1;
+		width: 100%;
+		float: left;
+	    position: relative;
+	    z-index: 100;
+	    margin-top: 0 !important;
+
+		ul li{
+			display: block;
+			a{
+				float: left;
+				padding: 10px;
+				width: 100%;
+				border-bottom: 1px solid $cor4;
+			}
+		}
+	}
+	.texto{
+		top:90px;
+		p{
+			font-size: 0.8em;
+		}
+		h1{
+			font-size: 1.5em;
+		}
+	}
+	.container{
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	#filmes{
+		.filme{
+			width: 100%;
+		}
+	}
+	.col1{
+		width: 50%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.col2{
+		width: 50%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.top{
+		padding-top: 90px;
+	}
+		.form1{
+	display: block;
+margin-left: 0px;
+	font-family: $texto;
+
+}
+input{
+	width: 100%;
+
+}
+textarea{
+	width: 100%;
+}
+}

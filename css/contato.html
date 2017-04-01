@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html Lang="pt-br">
+<head>
+	<title>Logan - O Filme</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Site sobre o filme do Logan">
+	<meta name="keywords" content="wolverine, logan, xmen">
+	<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/modernizr.js"></script>
+	<script type="text/javascript">
+		new WOW().init();
+
+		function mostraMenu(){
+			$("nav").toggle();
+			
+		}
+	</script>
+</head>
+	<body>
+		<header>
+			<a href="index.html" title="Logan - Pagina inicial" id="logo">
+				<img src="images/logo.jpg" alt="Logan" title="Logan">
+			</a>
+			<a href="javascript:mostraMenu()" title="Menu" id="menu" click="mostraMenu()">
+				<i class="fa fa-bars"></i>
+			</a>
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html" title="Home">Home</a>
+					</li>
+					<li>
+						<a href="sobre.html" title="Sobre">Sobre</a>
+					</li>
+					<li>
+						<a href="filmes.html" title="Filmes">Filmes</a>
+					</li>
+					<li>
+						<a href="contato.html" title="Contato">Contato</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+
+
+				<h1 class="center">ENTRE EM CONTATO</h1>
+		
+				<form name="form1" method="form1">
+					<label for="nome">Preencha seu nome:</label>
+					<input type="text" name="nome" required>
+					<br>
+					<label for="email">Preencha seu e-mail:</label>
+					<input type="email" name="email" required>
+					<br>
+					<label for="mensagem">Mensagem:</label>
+					<textarea name="mensagem" rows="5" required></textarea>
+					<br>
+					<button type="submit">
+						<i class="fa fa-check"></i> Enviar Mensagem
+					</button>
+				</form>
+			</main>
+			<footer class="center">
+					<a href="http://facebook.com" title="facebook">
+						<i class="fa fa-facebook "></i>
+					</a>
+					<a href="http://instagram.com" title="instagram">
+						<i class="fa fa-instagram "></i>
+					</a>
+					<a href="http://twitter.com" title="twitter">
+						<i class="fa fa-twitter "></i>
+					</a>
+					<p>
+						Desenvolvido por Guilherme
+					</p>
+		</footer>
+	</body>
+</html>
